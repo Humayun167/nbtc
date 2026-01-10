@@ -9,6 +9,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Microscope } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoImg from '@/assets/logo.png';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -105,7 +106,7 @@ export function Navigation() {
           {/* Logo (Desktop) */}
           <div className="hidden lg:flex items-center">
             <img 
-              src="/src/assets/logo.png" 
+              src={logoImg} 
               alt="Logo" 
               className="h-10 w-auto object-contain"
             />
@@ -151,7 +152,7 @@ export function Navigation() {
               ))}
               <div className="pt-4 flex items-center justify-center">
                 <img 
-                  src="/src/assets/logo.png" 
+                  src={logoImg} 
                   alt="Logo" 
                   className="h-12 w-auto object-contain"
                 />
