@@ -8,7 +8,7 @@
 import React, { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, FlaskConical, Microscope, Users, BookOpen, Atom, Dna, Pill, Activity } from 'lucide-react';
+import { ArrowRight, FlaskConical, Microscope, Users, BookOpen, Atom, Dna, Pill, Activity, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { SectionHeading } from '@/components/ui/section-heading';
@@ -45,6 +45,30 @@ const stats = [
   { value: '8', label: 'Faculty Members' },
   { value: '40+', label: 'Graduate Students' },
   { value: '5', label: 'Active Projects' },
+];
+
+const testimonials = [
+  {
+    name: 'Ahmed Moustofa',
+    role: 'Professor',
+    content: 'International collaborations in research lead to transformative discoveries. NBTC is playing a key role in fostering global partnerships in nano-biotechnology research. I encourage researchers and students to leverage these opportunities to enhance their impact in the field.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+    rating: 5,
+  },
+  {
+    name: 'Professor Dr. Mohammad Ali Moni',
+    role: 'Professor',
+    content: 'I have had the privilege of collaborating with NBTC, and I am impressed by its commitment to cutting-edge research in nano-biotechnology. The potential of nanotechnology in transforming global healthcare is immense, and this lab is at the forefront of making meaningful contributions to the field.',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    rating: 5,
+  },
+  {
+    name: 'Dr. Md Zahid Hasan',
+    role: 'Associate Professor',
+    content: 'The Nano BioTechnology Center (NBTC) is dedicated to advancing nanotechnology in healthcare through innovative research and interdisciplinary collaboration. Our goal is to bridge the gap between technology and medical science, ensuring that nano-driven solutions contribute to real-world medical applications.',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
+    rating: 5,
+  },
 ];
 
 export default function HomePage() {
@@ -245,6 +269,59 @@ export default function HomePage() {
                 </CardContent>
               </Card>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="relative z-10 section-padding bg-muted/30">
+        <div className="container-wide px-4 sm:px-6">
+          <SectionHeading
+            badge="Testimonials"
+            title="Testimonials"
+            description="Hear from our collaborators, researchers, and alumni about their experience with our center."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card variant="nano" className="h-full relative overflow-hidden p-6">
+                  {/* Profile Section */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover border-2 border-secondary/20"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      {/* Star Rating */}
+                      <div className="flex gap-0.5 mt-1">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Quote Section */}
+                  <div className="relative">
+                    <span className="text-4xl text-secondary font-serif leading-none">"</span>
+                    <p className="text-muted-foreground italic pl-2 pr-6">
+                      {testimonial.content}
+                    </p>
+                    <span className="text-4xl text-secondary font-serif leading-none absolute bottom-0 right-0">"</span>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
