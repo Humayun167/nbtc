@@ -114,7 +114,7 @@ export default function OpportunitiesPage() {
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               Join Our Lab
             </h1>
-            <p className="text-base sm:text-lg text-white/80">
+            <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-white/80">
               We welcome talented and passionate individuals to join our research team. 
               Explore opportunities for thesis, internships, and research positions.
             </p>
@@ -251,7 +251,7 @@ export default function OpportunitiesPage() {
                 <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
                   Prepare Your Application
                 </h2>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-muted-foreground mb-6">
                   Please prepare the following documents before submitting your application:
                 </p>
                 <ul className="space-y-2">
@@ -271,7 +271,7 @@ export default function OpportunitiesPage() {
                 </ul>
               </div>
               <div className="text-center md:text-left">
-                <p className="text-muted-foreground mb-6">
+                <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-muted-foreground mb-6">
                   Send your complete application package to:
                 </p>
                 <a 

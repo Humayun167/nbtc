@@ -93,15 +93,16 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
             >
-              Bio Nanotechnology
-              <span className="block text-secondary">Research Lab</span>
+              Nano BioTechnology
+              <span className="block text-secondary">Center, DIU </span>
+            
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-xl"
+              className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-white/80 mb-6 sm:mb-8 max-w-xl"
             >
               Pioneering the future of healthcare through innovative bio-nanotechnology research, 
               developing nanoscale solutions for medicine, diagnostics, and drug delivery.
@@ -179,6 +180,75 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Mission & Vision Section */}
+      <section className="relative z-10 section-padding bg-background">
+        <div className="container-wide px-4 sm:px-6">
+          <SectionHeading
+            badge="Our Purpose"
+            title="Mission & Vision"
+            description="Guided by our commitment to advancing healthcare through nanotechnology innovation."
+          />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-12">
+            {/* Mission Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card variant="nano" className="h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-secondary/20 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+                <CardHeader>
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center mb-4">
+                    <FlaskConical className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-2xl sm:text-3xl gradient-text">Our Mission</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-muted-foreground">
+                    To pioneer groundbreaking research in nano-biotechnology that transforms healthcare delivery, 
+                    developing innovative nanoscale solutions for disease diagnosis, treatment, and prevention.
+                  </p>
+                  <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-muted-foreground">
+                    We are committed to fostering a collaborative research environment that nurtures the next 
+                    generation of scientists while making meaningful contributions to global health challenges.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Vision Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <Card variant="nano" className="h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent/20 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+                <CardHeader>
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-secondary flex items-center justify-center mb-4">
+                    <Microscope className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-2xl sm:text-3xl gradient-text">Our Vision</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-muted-foreground">
+                    To become a globally recognized center of excellence in nano-biotechnology, leading 
+                    transformative research that bridges the gap between scientific discovery and clinical application.
+                  </p>
+                  <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-muted-foreground">
+                    We envision a future where our innovations in nanomedicine, biosensors, and drug delivery 
+                    systems revolutionize healthcare accessibility and patient outcomes worldwide.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Research Areas Section */}
       <section className="relative z-10 section-padding bg-background">
         <div className="container-wide px-4 sm:px-6">
@@ -242,8 +312,8 @@ export default function HomePage() {
             >
               <SectionHeading
                 badge="About Us"
-                title="Leading Bio-Nanotechnology Research"
-                description="Established at Daffodil International University, our lab is dedicated to pushing the boundaries of nanotechnology in healthcare."
+                title="Leading Nano BioTechnology Center"
+                description="Established at Daffodil International University, our center is dedicated to pushing the boundaries of nanotechnology in healthcare."
                 align="left"
               />
               <div className="space-y-4 mt-6">
@@ -325,7 +395,7 @@ export default function HomePage() {
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
               Join Our Research Community
             </h2>
-            <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
+            <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-white/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
               We welcome passionate students and researchers to join our lab. 
               Explore thesis opportunities, internships, and collaborative research positions.
             </p>

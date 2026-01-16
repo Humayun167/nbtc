@@ -62,7 +62,7 @@ export default function AboutPage() {
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               Pioneering Bio-Nanotechnology Research
             </h1>
-            <p className="text-base sm:text-lg text-white/80">
+            <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-white/80">
               The Bio Nanotechnology Lab at Daffodil International University is dedicated to 
               advancing healthcare through innovative nanoscale research and discovery.
             </p>
@@ -86,19 +86,19 @@ export default function AboutPage() {
                 align="left"
               />
               <div className="prose prose-lg text-muted-foreground mt-6 space-y-4">
-                <p>
+                <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto">
                   Established at Daffodil International University, the Bio Nanotechnology Lab 
                   stands at the forefront of nanoscale research in Bangladesh. Our 
                   interdisciplinary team combines expertise in biology, chemistry, physics, 
                   and engineering to tackle complex healthcare challenges.
                 </p>
-                <p>
+                <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto">
                   We specialize in developing innovative solutions in nanomedicine, biosensors, 
                   drug delivery systems, and biocompatible nanomaterials. Our research aims to 
                   translate fundamental discoveries into practical applications that can improve 
                   patient outcomes and healthcare accessibility.
                 </p>
-                <p>
+                <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto">
                   The lab serves as a hub for training the next generation of researchers, 
                   offering hands-on experience in cutting-edge nanotechnology techniques and 
                   fostering a culture of scientific inquiry and innovation.
@@ -160,7 +160,7 @@ export default function AboutPage() {
                     <CardTitle className="text-xl">{value.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">
+                    <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-muted-foreground">
                       {value.description}
                     </p>
                   </CardContent>

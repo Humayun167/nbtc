@@ -16,7 +16,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Address',
-    details: ['Bio Nanotechnology Lab', 'Daffodil International University', 'Daffodil Smart City, Birulia', 'Savar, Dhaka 1216, Bangladesh'],
+    details: ['Nano BioTechnology Center', 'Daffodil International University', 'Daffodil Smart City, Birulia', 'Savar, Dhaka 1216, Bangladesh'],
   },
   {
     icon: Mail,
@@ -84,7 +84,7 @@ export default function ContactPage() {
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               Get in Touch
             </h1>
-            <p className="text-base sm:text-lg text-white/80">
+            <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-white/80">
               Have questions about our research or interested in collaboration? 
               We'd love to hear from you.
             </p>

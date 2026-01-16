@@ -93,7 +93,7 @@ export default function FacilitiesPage() {
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               Lab Facilities & Equipment
             </h1>
-            <p className="text-base sm:text-lg text-white/80">
+            <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-white/80">
               State-of-the-art facilities and advanced instrumentation for cutting-edge 
               bio-nanotechnology research.
             </p>
@@ -198,7 +198,7 @@ export default function FacilitiesPage() {
               <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
                 Equipment Access
               </h2>
-              <p className="text-primary-foreground/70 mb-6 max-w-xl mx-auto">
+              <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-primary-foreground/70 mb-6 max-w-xl mx-auto">
                 Our facilities are available to research students, faculty members, and 
                 external collaborators. Contact us for scheduling and usage policies.
               </p>

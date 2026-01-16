@@ -133,7 +133,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-xs sm:text-sm text-primary-foreground/50">
-            © {new Date().getFullYear()} Bio Nanotechnology Lab, DIU. All rights reserved.
+            © {new Date().getFullYear()} Nano BioTechnology Center, DIU. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-primary-foreground/50">
             <Link to="/privacy" className="hover:text-primary-foreground transition-colors">

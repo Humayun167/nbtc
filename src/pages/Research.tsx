@@ -139,7 +139,7 @@ export default function ResearchPage() {
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Our Research Areas
             </h1>
-            <p className="text-lg text-white/80">
+            <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-white/80">
               Exploring the intersection of biology and nanotechnology to develop 
               innovative solutions for healthcare challenges.
             </p>
@@ -177,7 +177,7 @@ export default function ResearchPage() {
                       </span>
                     </div>
                     <div className="p-8 md:col-span-2">
-                      <p className="text-muted-foreground mb-6">{area.description}</p>
+                      <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-muted-foreground mb-6">{area.description}</p>
                       <h4 className="font-semibold mb-3">Current Focus:</h4>
                       <ul className="grid sm:grid-cols-2 gap-2">
                         {area.highlights.map((highlight) => (
@@ -300,7 +300,7 @@ export default function ResearchPage() {
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
               Interested in Collaboration?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+            <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-muted-foreground mb-8 max-w-xl mx-auto">
               We welcome research collaborations with academic institutions and industry partners.
             </p>
             <Button variant="nano" size="lg" asChild>

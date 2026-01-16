@@ -93,6 +93,7 @@ export default function PublicationsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedYear, setSelectedYear] = useState('All');
   const [selectedType, setSelectedType] = useState('All');
+  const [activeCategory, setActiveCategory] = useState<'journal' | 'conference'>('journal');
 
   const filteredPublications = publications.filter((pub) => {
     const matchesSearch = 
@@ -125,7 +126,7 @@ export default function PublicationsPage() {
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               Research Publications
             </h1>
-            <p className="text-base sm:text-lg text-white/80">
+            <p className="text-justify text-[1.1rem] leading-[1.7] hyphens-auto text-white/80">
               Explore our peer-reviewed research publications in leading scientific journals 
               and international conferences.
             </p>
@@ -180,73 +181,199 @@ export default function PublicationsPage() {
         </div>
       </section>
 
+      {/* Category Tabs */}
+      <section className="py-6 bg-background">
+        <div className="container-wide">
+          <div className="flex items-center justify-center gap-4">
+            <button
+              onClick={() => setActiveCategory('journal')}
+              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                activeCategory === 'journal'
+                  ? 'bg-secondary text-white shadow-lg shadow-secondary/25'
+                  : 'bg-card border border-border text-muted-foreground hover:border-secondary/50 hover:text-secondary'
+              }`}
+            >
+              <FileText className="w-5 h-5" />
+              Journal Articles
+            </button>
+            <button
+              onClick={() => setActiveCategory('conference')}
+              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                activeCategory === 'conference'
+                  ? 'bg-accent text-white shadow-lg shadow-accent/25'
+                  : 'bg-card border border-border text-muted-foreground hover:border-accent/50 hover:text-accent'
+              }`}
+            >
+              <Calendar className="w-5 h-5" />
+              Conference Papers
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Publications List */}
       <section className="section-padding">
         <div className="container-wide">
-          <div className="flex items-center justify-between mb-8">
-            <p className="text-muted-foreground">
-              Showing <span className="font-semibold text-foreground">{filteredPublications.length}</span> publications
-            </p>
-          </div>
+          {/* Journal Articles Section */}
+          {activeCategory === 'journal' && (
+            <motion.div
+              key="journal"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="flex items-center justify-between mb-8">
+                <p className="text-muted-foreground">
+                  Showing <span className="font-semibold text-foreground">
+                    {filteredPublications.filter(pub => pub.type === 'Journal Article' || pub.type === 'Review Article').length}
+                  </span> journal articles
+                </p>
+              </div>
 
-          <div className="space-y-4">
-            {filteredPublications.map((pub, index) => (
-              <motion.div
-                key={pub.doi}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-              >
-                <Card variant="elevated" className="hover:border-secondary/30">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col md:flex-row gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center">
-                          <FileText className="w-6 h-6 text-secondary" />
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex flex-wrap gap-2 mb-2">
-                          <span className="px-2 py-0.5 rounded text-xs font-medium bg-secondary/10 text-secondary">
-                            {pub.year}
-                          </span>
-                          <span className="px-2 py-0.5 rounded text-xs font-medium bg-accent/10 text-accent">
-                            {pub.type}
-                          </span>
-                        </div>
-                        <h3 className="font-display text-lg font-semibold mb-1 hover:text-secondary transition-colors cursor-pointer">
-                          {pub.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-2">{pub.authors}</p>
-                        <p className="text-sm font-medium text-secondary">{pub.journal}</p>
-                        <p className="text-sm text-muted-foreground mt-3">{pub.abstract}</p>
-                        <div className="mt-4 flex items-center gap-4">
-                          <a
-                            href={`https://doi.org/${pub.doi}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-secondary hover:underline inline-flex items-center gap-1"
-                          >
-                            View Publication
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-                          <span className="text-xs text-muted-foreground">DOI: {pub.doi}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+              {filteredPublications.filter(pub => pub.type === 'Journal Article' || pub.type === 'Review Article').length > 0 ? (
+                <div className="space-y-4">
+                  {filteredPublications
+                    .filter(pub => pub.type === 'Journal Article' || pub.type === 'Review Article')
+                    .map((pub, index) => (
+                      <motion.div
+                        key={pub.doi}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.05 }}
+                      >
+                        <Card variant="elevated" className="hover:border-secondary/30">
+                          <CardContent className="p-6">
+                            <div className="flex flex-col md:flex-row gap-4">
+                              <div className="flex-shrink-0">
+                                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center">
+                                  <FileText className="w-6 h-6 text-secondary" />
+                                </div>
+                              </div>
+                              <div className="flex-1">
+                                <div className="flex flex-wrap gap-2 mb-2">
+                                  <span className="px-2 py-0.5 rounded text-xs font-medium bg-secondary/10 text-secondary">
+                                    {pub.year}
+                                  </span>
+                                  <span className="px-2 py-0.5 rounded text-xs font-medium bg-accent/10 text-accent">
+                                    {pub.type}
+                                  </span>
+                                </div>
+                                <h3 className="font-display text-lg font-semibold mb-1 hover:text-secondary transition-colors cursor-pointer">
+                                  {pub.title}
+                                </h3>
+                                <p className="text-sm text-muted-foreground mb-2">{pub.authors}</p>
+                                <p className="text-sm font-medium text-secondary">{pub.journal}</p>
+                                <p className="text-sm text-muted-foreground mt-3">{pub.abstract}</p>
+                                <div className="mt-4 flex items-center gap-4">
+                                  <a
+                                    href={`https://doi.org/${pub.doi}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm text-secondary hover:underline inline-flex items-center gap-1"
+                                  >
+                                    View Publication
+                                    <ExternalLink className="w-3 h-3" />
+                                  </a>
+                                  <span className="text-xs text-muted-foreground">DOI: {pub.doi}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    ))}
+                </div>
+              ) : (
+                <div className="text-center py-16">
+                  <FileText className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                  <h3 className="font-display text-xl font-semibold mb-2">No journal articles found</h3>
+                  <p className="text-muted-foreground">Try adjusting your search or filters.</p>
+                </div>
+              )}
+            </motion.div>
+          )}
 
-          {filteredPublications.length === 0 && (
-            <div className="text-center py-16">
-              <FileText className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-              <h3 className="font-display text-xl font-semibold mb-2">No publications found</h3>
-              <p className="text-muted-foreground">Try adjusting your search or filters.</p>
-            </div>
+          {/* Conference Papers Section */}
+          {activeCategory === 'conference' && (
+            <motion.div
+              key="conference"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="flex items-center justify-between mb-8">
+                <p className="text-muted-foreground">
+                  Showing <span className="font-semibold text-foreground">
+                    {filteredPublications.filter(pub => pub.type === 'Conference Paper').length}
+                  </span> conference papers
+                </p>
+              </div>
+
+              {filteredPublications.filter(pub => pub.type === 'Conference Paper').length > 0 ? (
+                <div className="space-y-4">
+                  {filteredPublications
+                    .filter(pub => pub.type === 'Conference Paper')
+                    .map((pub, index) => (
+                      <motion.div
+                        key={pub.doi}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.05 }}
+                      >
+                        <Card variant="elevated" className="hover:border-accent/30">
+                          <CardContent className="p-6">
+                            <div className="flex flex-col md:flex-row gap-4">
+                              <div className="flex-shrink-0">
+                                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                                  <Calendar className="w-6 h-6 text-accent" />
+                                </div>
+                              </div>
+                              <div className="flex-1">
+                                <div className="flex flex-wrap gap-2 mb-2">
+                                  <span className="px-2 py-0.5 rounded text-xs font-medium bg-secondary/10 text-secondary">
+                                    {pub.year}
+                                  </span>
+                                  <span className="px-2 py-0.5 rounded text-xs font-medium bg-accent/10 text-accent">
+                                    {pub.type}
+                                  </span>
+                                </div>
+                                <h3 className="font-display text-lg font-semibold mb-1 hover:text-accent transition-colors cursor-pointer">
+                                  {pub.title}
+                                </h3>
+                                <p className="text-sm text-muted-foreground mb-2">{pub.authors}</p>
+                                <p className="text-sm font-medium text-accent">{pub.journal}</p>
+                                <p className="text-sm text-muted-foreground mt-3">{pub.abstract}</p>
+                                <div className="mt-4 flex items-center gap-4">
+                                  <a
+                                    href={`https://doi.org/${pub.doi}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm text-accent hover:underline inline-flex items-center gap-1"
+                                  >
+                                    View Publication
+                                    <ExternalLink className="w-3 h-3" />
+                                  </a>
+                                  <span className="text-xs text-muted-foreground">DOI: {pub.doi}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    ))}
+                </div>
+              ) : (
+                <div className="text-center py-16">
+                  <Calendar className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                  <h3 className="font-display text-xl font-semibold mb-2">No conference papers found</h3>
+                  <p className="text-muted-foreground">Try adjusting your search or filters.</p>
+                </div>
+              )}
+            </motion.div>
           )}
         </div>
       </section>

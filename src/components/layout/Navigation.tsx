@@ -14,6 +14,7 @@ import { nbtcLogo, uniLogo } from '@/assets/assets';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
+  { href: '/event', label: 'Event' },
   { href: '/research', label: 'Research' },
   { href: '/team', label: 'Team' },
   { href: '/publications', label: 'Publications' },
