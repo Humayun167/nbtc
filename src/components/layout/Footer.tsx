@@ -4,7 +4,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Microscope, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { nbtcLogo } from '../../assets/assets';
 
 const footerLinks = {
   research: [
@@ -33,12 +34,14 @@ export function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-2 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="p-2 rounded-lg bg-secondary/20">
-                <Microscope className="w-6 h-6 text-secondary" />
-              </div>
+            <Link to="/" className="flex items-center gap-3 mb-4">
+              <img 
+                src={nbtcLogo} 
+                alt="NBTC Logo" 
+                className="w-16 h-16 object-contain"
+              />
               <div>
-                <span className="font-display font-bold text-lg">Bio Nano Lab</span>
+                <span className="font-display font-bold text-lg">NBTC</span>
                 <span className="block text-xs text-primary-foreground/60">
                   Daffodil International University
                 </span>
