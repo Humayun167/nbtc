@@ -6,6 +6,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { nbtcLogo } from '../../assets/assets';
+import { VisitorCounter } from '@/components/ui/visitor-counter';
 
 const footerLinks = {
   research: [
@@ -138,6 +139,7 @@ export function Footer() {
           <p className="text-xs sm:text-sm text-primary-foreground/50">
             © {new Date().getFullYear()} Nano BioTechnology Center, DIU. All rights reserved.
           </p>
+          <VisitorCounter variant="compact" />
           <div className="flex items-center gap-6 text-sm text-primary-foreground/50">
             <Link to="/privacy" className="hover:text-primary-foreground transition-colors">
               Privacy Policy
