@@ -7,9 +7,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Microscope } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logoImg from '@/assets/logo.png';
+import { nbtcLogo, uniLogo } from '@/assets/assets';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -56,30 +56,16 @@ export function Navigation() {
     >
       <nav className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          {/* NBTC Logo - Left */}
           <Link 
             to="/" 
             className="flex items-center gap-2 group"
           >
-            <div className={`p-2 rounded-lg transition-colors ${
-              isScrolled || !isHomePage
-                ? 'bg-secondary/10 text-secondary'
-                : 'bg-white/10 text-white'
-            }`}>
-              <Microscope className="w-6 h-6" />
-            </div>
-            <div className="hidden sm:block">
-              <span className={`font-display font-bold text-lg transition-colors ${
-                isScrolled || !isHomePage ? 'text-primary' : 'text-white'
-              }`}>
-                Bio Nano Lab
-              </span>
-              <span className={`block text-xs transition-colors ${
-                isScrolled || !isHomePage ? 'text-muted-foreground' : 'text-white/70'
-              }`}>
-                Daffodil International University
-              </span>
-            </div>
+            <img 
+              src={nbtcLogo} 
+              alt="NBTC Logo" 
+              className="w-20 h-20 md:w-24 md:h-24 object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -103,12 +89,12 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* Logo (Desktop) */}
+          {/* University Logo - Right (Desktop) */}
           <div className="hidden lg:flex items-center">
             <img 
-              src={logoImg} 
-              alt="Logo" 
-              className="h-10 w-auto object-contain"
+              src={uniLogo} 
+              alt="University Logo" 
+              className="h-12 w-auto object-contain"
             />
           </div>
 
@@ -152,8 +138,8 @@ export function Navigation() {
               ))}
               <div className="pt-4 flex items-center justify-center">
                 <img 
-                  src={logoImg} 
-                  alt="Logo" 
+                  src={uniLogo} 
+                  alt="University Logo" 
                   className="h-12 w-auto object-contain"
                 />
               </div>
