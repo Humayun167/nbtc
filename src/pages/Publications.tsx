@@ -13,81 +13,73 @@ import Footer from '@/components/layout/Footer';
 
 const publications = [
   {
-    title: 'Gold Nanoparticle-Based Targeted Drug Delivery for Triple-Negative Breast Cancer',
-    authors: 'Rahman M., Ahmed F., Hossain K.',
-    journal: 'Journal of Nanomedicine',
-    year: 2023,
+    title: 'Unraveling risk factors and transcriptomic signatures in liver cancer progression and mortality through machine learning and bioinformatics',
+    authors: 'NBTC Research Team',
+    journal: 'Briefings in Functional Genomics',
+    year: 2026,
     type: 'Journal Article',
-    doi: '10.1234/jnm.2023.0001',
-    abstract: 'Development of antibody-conjugated gold nanoparticles for targeted chemotherapy delivery in triple-negative breast cancer cells.',
+    doi: '10.1093/bfgp/elaf019',
+    abstract: 'Liver cancer (LC) is a leading cause of cancer death, yet molecular mechanisms and risk factors remain poorly understood. This study developed an integrative multi-stage framework combining bioinformatics, machine learning-based feature selection, survival modeling, and network analysis to identify robust biomarkers and pathways involved in LC progression. Differential expression analysis using TCGA data identified prognostic genes and linked risk factor datasets with shared transcriptomic signatures. Network and pathway analyses revealed key oncogenic processes, and independent validation confirmed their significance. Overall, this work provides insights into LC progression and potential targets for clinical investigation.',
   },
   {
-    title: 'Electrochemical Biosensor for Rapid Detection of SARS-CoV-2',
-    authors: 'Jahan N., Alam T., Rahman M.',
-    journal: 'Biosensors and Bioelectronics',
-    year: 2023,
+    title: 'MXene-enhanced perovskite solar cells: Unveiling the superior performance of Mo2TiC2 as an advanced electron transport layer',
+    authors: 'NBTC Research Team',
+    journal: 'Materials Science and Engineering: B',
+    year: 2026,
     type: 'Journal Article',
-    doi: '10.1234/bab.2023.0045',
-    abstract: 'A novel electrochemical biosensor utilizing gold nanoparticle-modified electrodes for rapid and sensitive COVID-19 detection.',
+    doi: '10.1016/j.mseb.2025.119077',
+    abstract: 'Perovskite solar cells (PSCs) are an emerging thin-film photovoltaic technology with high performance. This study explores the use of Mo2TiC2-MXene as an electron transport layer (ETL) in perovskite solar cell structures simulated via SCAPS-1D. The effects of variations in layer thickness, defect density, donor/acceptor densities, and material parameters were systematically assessed. A structure incorporating Mo2TiC2-MXene ETL exhibited excellent electrical characteristics, including open-circuit voltage (Voc), short-circuit current density (Jsc), fill factor (FF), and power conversion efficiency (PCE). The results underscore the potential of Mo2TiC2-MXene to significantly enhance PSC performance and carrier transport, offering insights toward high-efficiency device design.',
   },
   {
-    title: 'Green Synthesis of Silver Nanoparticles Using Plant Extracts',
-    authors: 'Hossain K., Islam S., Ahmed F.',
-    journal: 'Green Chemistry Letters',
-    year: 2023,
+    title: 'Identification of key candidate genes for ovarian cancer using integrated statistical and machine learning approaches',
+    authors: 'NBTC Research Team',
+    journal: 'Briefings in Bioinformatics',
+    year: 2025,
     type: 'Journal Article',
-    doi: '10.1234/gcl.2023.0089',
-    abstract: 'Eco-friendly synthesis of silver nanoparticles using indigenous plant extracts with antimicrobial properties.',
+    doi: '10.1093/bib/bbaf602',
+    abstract: 'Ovarian cancer (OC) is a highly lethal malignancy worldwide, necessitating identification of key genes to improve diagnosis and treatment. Three microarray datasets were analyzed with normalization and differential gene expression analysis. Highly discriminative differentially expressed genes (HDDEGs) were identified using support vector machine-based methods, and enrichment analysis was conducted. Network and module analyses revealed 18 central hub genes, 11 hub module genes, and 54 meta-hub genes. Intersection analysis revealed eight shared key genes (FANCD2, BUB1B, BUB1, KIF4A, DTL, NCAPG, KIF20A, UBE2C). Weighted gene co-expression network analysis identified key modules linked to clinical traits, validating the predictive and prognostic significance of these key genes. This integrative approach identifies potential biomarkers and highlights clinical relevance for OC diagnosis and prognosis.',
   },
   {
-    title: 'Smart Hydrogel Nanoparticles for Insulin Delivery',
-    authors: 'Ahmed F., Uddin R., Rahman M.',
-    journal: 'International Conference on Nanomedicine',
-    year: 2023,
-    type: 'Conference Paper',
-    doi: '10.1234/icn.2023.0123',
-    abstract: 'Development of glucose-responsive smart hydrogel nanoparticles for controlled insulin release.',
+    title: 'An empirical study for the early detection of Mpox from skin lesion images using pretrained CNN models leveraging XAI technique',
+    authors: 'NBTC Research Team',
+    journal: 'Healthcare Technology Letters',
+    year: 2025,
+    type: 'Journal (Accepted)',
+    doi: '',
+    abstract: 'This study investigates the early detection of Mpox from skin lesion images using pretrained convolutional neural networks combined with explainable AI (XAI) techniques. The proposed approach enhances diagnostic accuracy while improving model interpretability to support clinical decision-making.',
   },
   {
-    title: 'Lipid Nanoparticles for mRNA Vaccine Delivery: A Review',
-    authors: 'Rahman M., Jahan N.',
-    journal: 'Advanced Drug Delivery Reviews',
-    year: 2022,
-    type: 'Review Article',
-    doi: '10.1234/addr.2022.0056',
-    abstract: 'Comprehensive review of lipid nanoparticle technology for mRNA vaccine delivery applications.',
+    title: 'A High-Performance End-to-End Pipeline for Multilingual License Plate Recognition and Vehicle Classification in Bangladesh',
+    authors: 'NBTC Research Team',
+    journal: 'International Conference on Intelligent Data-Driven Applications (IDDA)',
+    year: 2025,
+    type: 'Conference (Accepted)',
+    doi: '',
+    abstract: 'This paper presents an end-to-end deep learning pipeline for multilingual license plate recognition and vehicle classification tailored to the Bangladeshi context. The system integrates detection, character recognition across multiple scripts, and vehicle type classification to achieve high accuracy and real-time performance.',
   },
   {
-    title: 'Carbon Nanotube-Based Scaffolds for Neural Tissue Engineering',
-    authors: 'Alam T., Akter M., Hossain K.',
-    journal: 'Biomaterials Science',
-    year: 2022,
-    type: 'Journal Article',
-    doi: '10.1234/bs.2022.0078',
-    abstract: 'Development of biocompatible carbon nanotube scaffolds for neural cell growth and regeneration.',
+    title: 'PlantLeafNet: A Comparative Study of Deep Learning Models for Money Plant Disease Classification',
+    authors: 'NBTC Research Team',
+    journal: 'International Conference on Intelligent Data-Driven Applications (IDDA)',
+    year: 2025,
+    type: 'Conference (Accepted)',
+    doi: '',
+    abstract: 'This study introduces PlantLeafNet, a deep learning-based framework for money plant disease classification. Multiple convolutional neural network architectures are comparatively analyzed to evaluate classification performance, robustness, and suitability for plant disease diagnosis.',
   },
   {
-    title: 'Quantum Dots for Cancer Cell Imaging and Tracking',
-    authors: 'Islam S., Ahmed F., Rahman M.',
-    journal: 'ACS Nano',
-    year: 2022,
-    type: 'Journal Article',
-    doi: '10.1234/an.2022.0034',
-    abstract: 'Development of biocompatible quantum dots for real-time tracking of cancer cells in vivo.',
+    title: 'High-Accuracy 3-Class Cerebral Stroke Detection Using ConvNeXt: An End-to-End Vision Pipeline',
+    authors: 'NBTC Research Team',
+    journal: 'International Conference on Intelligent Data-Driven Applications (IDDA)',
+    year: 2025,
+    type: 'Conference (Accepted)',
+    doi: '',
+    abstract: 'This paper proposes an end-to-end computer vision pipeline for three-class cerebral stroke detection using the ConvNeXt architecture. The model demonstrates high accuracy and robustness, highlighting the effectiveness of modern convolutional networks in medical image analysis.',
   },
-  {
-    title: 'Nanomedicine in Bangladesh: Current Status and Future Prospects',
-    authors: 'Rahman M.',
-    journal: 'Bangladesh Medical Research Council Bulletin',
-    year: 2021,
-    type: 'Review Article',
-    doi: '10.1234/bmrcb.2021.0012',
-    abstract: 'Overview of nanomedicine research and applications in Bangladesh healthcare context.',
-  },
+ 
 ];
 
-const years = ['All', '2023', '2022', '2021', '2020'];
-const types = ['All', 'Journal Article', 'Conference Paper', 'Review Article'];
+const years = ['All', '2026', '2025', '2023', '2022', '2021', '2020'];
+const types = ['All', 'Journal Article', 'Journal (Accepted)', 'Conference Paper', 'Conference (Accepted)', 'Review Article'];
 
 export default function PublicationsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -226,15 +218,15 @@ export default function PublicationsPage() {
               <div className="flex items-center justify-between mb-8">
                 <p className="text-muted-foreground">
                   Showing <span className="font-semibold text-foreground">
-                    {filteredPublications.filter(pub => pub.type === 'Journal Article' || pub.type === 'Review Article').length}
+                    {filteredPublications.filter(pub => pub.type === 'Journal Article' || pub.type === 'Review Article' || pub.type === 'Journal (Accepted)').length}
                   </span> journal articles
                 </p>
               </div>
 
-              {filteredPublications.filter(pub => pub.type === 'Journal Article' || pub.type === 'Review Article').length > 0 ? (
+              {filteredPublications.filter(pub => pub.type === 'Journal Article' || pub.type === 'Review Article' || pub.type === 'Journal (Accepted)').length > 0 ? (
                 <div className="space-y-4">
                   {filteredPublications
-                    .filter(pub => pub.type === 'Journal Article' || pub.type === 'Review Article')
+                    .filter(pub => pub.type === 'Journal Article' || pub.type === 'Review Article' || pub.type === 'Journal (Accepted)')
                     .map((pub, index) => (
                       <motion.div
                         key={pub.doi}
@@ -307,15 +299,15 @@ export default function PublicationsPage() {
               <div className="flex items-center justify-between mb-8">
                 <p className="text-muted-foreground">
                   Showing <span className="font-semibold text-foreground">
-                    {filteredPublications.filter(pub => pub.type === 'Conference Paper').length}
+                    {filteredPublications.filter(pub => pub.type === 'Conference Paper' || pub.type === 'Conference (Accepted)').length}
                   </span> conference papers
                 </p>
               </div>
 
-              {filteredPublications.filter(pub => pub.type === 'Conference Paper').length > 0 ? (
+              {filteredPublications.filter(pub => pub.type === 'Conference Paper' || pub.type === 'Conference (Accepted)').length > 0 ? (
                 <div className="space-y-4">
                   {filteredPublications
-                    .filter(pub => pub.type === 'Conference Paper')
+                    .filter(pub => pub.type === 'Conference Paper' || pub.type === 'Conference (Accepted)')
                     .map((pub, index) => (
                       <motion.div
                         key={pub.doi}

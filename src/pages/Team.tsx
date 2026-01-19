@@ -9,32 +9,17 @@ import { Card, CardContent } from '@/components/ui/card';
 import { SectionHeading } from '@/components/ui/section-heading';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
+import { advisor } from '@/assets/assets';
 
 // Advisor Panel
 const advisors = [
   {
-    name: 'Prof. Dr. Abdul Karim',
-    title: 'Chief Advisor',
-    department: 'Vice Chancellor, DIU',
-    expertise: 'Strategic Leadership, Academic Excellence',
-    email: 'vc@diu.edu.bd',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face',
-  },
-  {
-    name: 'Prof. Dr. Aminul Islam',
-    title: 'Senior Advisor',
-    department: 'Pro Vice Chancellor, DIU',
-    expertise: 'Research Policy, Innovation Management',
-    email: 'pvc@diu.edu.bd',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
-  },
-  {
-    name: 'Prof. Dr. Shahnaz Parvin',
-    title: 'Academic Advisor',
-    department: 'Dean, Faculty of Science & Engineering',
-    expertise: 'Nanotechnology, Materials Science',
-    email: 's.parvin@diu.edu.bd',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face',
+    name: 'Dr. Jamal Uddin',
+    title: 'Professor and Founding Director',
+    department: 'Center for Nanotechnology, Coppin State University, USA',
+    expertise: 'Nanotechnology, Research Leadership',
+    email: '',
+    image: advisor,
   },
 ];
 
@@ -198,7 +183,7 @@ export default function TeamPage() {
             icon={<Award className="w-5 h-5" />}
           />
 
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <div className="flex flex-wrap justify-center gap-6 mt-12">
             {advisors.map((advisor, index) => (
               <motion.div
                 key={advisor.name}
@@ -206,6 +191,7 @@ export default function TeamPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="w-full max-w-sm"
               >
                 <Card variant="glass" className="overflow-hidden h-full text-center">
                   <CardContent className="p-0">
