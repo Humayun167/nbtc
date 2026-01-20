@@ -9,7 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { SectionHeading } from '@/components/ui/section-heading';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
-import { advisor } from '@/assets/assets';
+import { advisor, director } from '@/assets/assets';
 
 // Advisor Panel
 const advisors = [
@@ -206,7 +206,6 @@ export default function TeamPage() {
                       <h3 className="font-display text-xl font-bold">{advisor.name}</h3>
                       <p className="text-secondary font-medium text-sm">{advisor.title}</p>
                       <p className="text-muted-foreground text-sm mt-1">{advisor.department}</p>
-                      
                       <div className="mt-4 space-y-2">
                         <div className="flex items-center justify-center gap-2 text-sm">
                           <GraduationCap className="w-4 h-4 text-accent flex-shrink-0" />
@@ -227,6 +226,55 @@ export default function TeamPage() {
                 </Card>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Director Panel Section */}
+      <section className="section-padding">
+        <div className="container-wide">
+          <SectionHeading
+            badge="Leadership"
+            title="Lab Director "
+            description="Lab director providing operational leadership and vision for our center."
+            icon={<Award className="w-5 h-5" />}
+          />
+          <div className="flex justify-center mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="w-full max-w-sm"
+            >
+              <Card variant="glass" className="overflow-hidden h-full text-center">
+                <CardContent className="p-0">
+                  <div className="w-56 h-56 mx-auto overflow-hidden rounded-lg">
+                    <img
+                      src={director}
+                      alt="Lab Director"
+                      className="w-full h-full object-contain bg-white transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-display text-xl font-bold">Dr. Md. Ali Hossain</h3>
+                    <p className="text-secondary font-medium text-sm">Associate Professor, Dept. of CSE & Director</p>
+                    <p className="text-muted-foreground text-sm mt-1">NanoBio Technology Center, DIU</p>
+                    <p className="text-muted-foreground text-sm mt-1">Faculty of Science and Information Technology</p>
+                    <p className="text-muted-foreground text-sm mt-1">Daffodil International University</p>
+                    <div className="flex items-center justify-center gap-2 text-sm mt-3">
+                      <Mail className="w-4 h-4 text-secondary flex-shrink-0" />
+                      <a 
+                        href="mailto:ali.cse@diu.edu.bd"
+                        className="text-muted-foreground hover:text-secondary transition-colors"
+                      >
+                        ali.cse@diu.edu.bd
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
