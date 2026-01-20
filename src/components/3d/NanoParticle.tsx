@@ -5,7 +5,7 @@
  * Features icosahedron geometry with glowing effects.
  */
 
-import React, { useRef, Suspense } from 'react';
+import React, { useRef, Suspense, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, MeshDistortMaterial, Sphere, Icosahedron } from '@react-three/drei';
 import * as THREE from 'three';
@@ -107,12 +107,23 @@ interface NanoParticleProps {
 }
 
 export function NanoParticle({ className = '' }: NanoParticleProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div className={className} aria-hidden="true">
       <Suspense fallback={null}>
         <Canvas
           camera={{ position: [0, 0, 8], fov: 45 }}
-          dpr={[1, 2]}
+          dpr={isMobile ? [1, 1.5] : [1, 2]}
           gl={{
             antialias: true,
             alpha: true,

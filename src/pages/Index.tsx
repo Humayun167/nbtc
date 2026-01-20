@@ -93,7 +93,7 @@ export default function HomePage() {
         {/* 3D Nano Particle */}
         <div className="absolute inset-0 opacity-60 md:opacity-80">
           <Suspense fallback={null}>
-            <NanoParticle className="w-full h-full scale-75 md:scale-100 translate-y-1/4 md:translate-y-0" />
+            <NanoParticle className="w-full h-full" />
           </Suspense>
         </div>
 
