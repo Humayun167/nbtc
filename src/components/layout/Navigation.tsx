@@ -65,7 +65,7 @@ export function Navigation() {
             <img 
               src={nbtcLogo} 
               alt="NBTC Logo" 
-              className="w-20 h-20 md:w-24 md:h-24 object-contain mt-2 md:mt-4"
+              className="w-20 h-20 md:w-24 md:h-24 object-contain mt-2 md:mt-4 drop-shadow-[0_2px_8px_rgba(255,255,255,0.8)]"
             />
           </Link>
 
