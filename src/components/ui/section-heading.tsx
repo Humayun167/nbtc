@@ -11,6 +11,7 @@ interface SectionHeadingProps {
   description?: string;
   align?: 'left' | 'center';
   className?: string;
+  icon?: React.ReactNode;
 }
 
 export function SectionHeading({
@@ -19,6 +20,7 @@ export function SectionHeading({
   description,
   align = 'center',
   className = '',
+  icon,
 }: SectionHeadingProps) {
   return (
     <motion.div
@@ -29,7 +31,8 @@ export function SectionHeading({
       className={`${align === 'center' ? 'text-center' : ''} ${className}`}
     >
       {badge && (
-        <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-secondary/10 text-secondary mb-3 sm:mb-4">
+        <span className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-secondary/10 text-secondary mb-3 sm:mb-4">
+          {icon}
           {badge}
         </span>
       )}

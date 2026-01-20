@@ -140,6 +140,21 @@ export function Footer() {
             © {new Date().getFullYear()} Nano BioTechnology Center, DIU. All rights reserved.
           </p>
           <VisitorCounter variant="compact" />
+          <p className="text-xs sm:text-sm text-primary-foreground/50">
+            Developed by{' '}
+            <a
+              href="https://www.humayunrashidkhan.tech/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-secondary/80 hover:underline transition-colors font-medium cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open('https://www.humayunrashidkhan.tech/', '_blank');
+              }}
+            >
+              Md. Humayun Rashid Khan
+            </a>
+          </p>
           <div className="flex items-center gap-6 text-sm text-primary-foreground/50">
             <Link to="/privacy" className="hover:text-primary-foreground transition-colors">
               Privacy Policy
